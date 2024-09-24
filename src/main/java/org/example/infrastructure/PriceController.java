@@ -12,8 +12,8 @@ public class PriceController {
     @GetMapping("/price")
     public Float getPrice(
             @RequestParam("date") LocalDateTime date,
-            @RequestParam("product_id") Long productId,
-            @RequestParam("brand_id") Long brandId) {
+            @RequestParam("product_id") Integer productId,
+            @RequestParam("brand_id") Integer brandId) {
         return 20.0f;
     }
 
