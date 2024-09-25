@@ -118,6 +118,20 @@ public class ProductPrice {
     }
 
     @Override
+    public String toString() {
+        return "ProductPrice{" +
+                "productId=" + productId +
+                ", brandId=" + brandId +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", priceList=" + priceList +
+                ", priority=" + priority +
+                ", price=" + price +
+                ", currency='" + currency + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
