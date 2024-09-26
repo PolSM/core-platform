@@ -66,8 +66,9 @@ public class PriceControllerTest {
         return Stream.of(
                 Arguments.of("2020-06-14T10:00:00", new ProductPriceDTO(PRODUCT_ID, BRAND_ID, LocalDateTime.parse("2020-06-14T00:00:00"), LocalDateTime.parse("2020-12-31T23:59:59"), 35.50f, CURRENCY)),
                 Arguments.of("2020-06-14T16:00:00", new ProductPriceDTO(PRODUCT_ID, BRAND_ID, LocalDateTime.parse("2020-06-14T15:00:00"), LocalDateTime.parse("2020-06-14T18:30:00"), 25.45f, CURRENCY)),
+                Arguments.of("2020-06-14T21:00:00", new ProductPriceDTO(PRODUCT_ID, BRAND_ID, LocalDateTime.parse("2020-06-14T00:00:00"), LocalDateTime.parse("2020-12-31T23:59:59"), 35.50f, CURRENCY)),
                 Arguments.of("2020-06-15T10:00:00", new ProductPriceDTO(PRODUCT_ID, BRAND_ID, LocalDateTime.parse("2020-06-15T00:00:00"), LocalDateTime.parse("2020-06-15T11:00:00"), 30.50f, CURRENCY)),
-                Arguments.of("2020-06-15T16:00:00", new ProductPriceDTO(PRODUCT_ID, BRAND_ID, LocalDateTime.parse("2020-06-15T16:00:00"), LocalDateTime.parse("2020-12-31T23:59:59"), 38.95f, CURRENCY))
+                Arguments.of("2020-06-16T21:00:00", new ProductPriceDTO(PRODUCT_ID, BRAND_ID, LocalDateTime.parse("2020-06-15T16:00:00"), LocalDateTime.parse("2020-12-31T23:59:59"), 38.95f, CURRENCY))
         );
     }
 

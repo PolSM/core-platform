@@ -29,9 +29,6 @@ public class PriceController {
             return ResponseEntity.ok(json);
         } catch (JsonProcessingException e) {
             return ResponseEntity.status(404).body("Price not found");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
     }
-
 }
