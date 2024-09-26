@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @Service
 public class JpaProductPriceRepository implements ProductPriceRepository {
 
+    @Autowired
     private final BaseJpaProductPriceRepository base;
 
     @Autowired
