@@ -6,7 +6,7 @@ CREATE TABLE core_platform.tbl_prices (
     end_date TIMESTAMP NOT NULL,
     price_list INTEGER NOT NULL,
     product_id INTEGER NOT NULL,
-    priority INTEGER NOT NULL,
+    priority TINYINT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     currency VARCHAR(3) NOT NULL,
     PRIMARY KEY (product_id, brand_id, start_date, end_date)

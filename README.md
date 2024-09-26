@@ -23,5 +23,5 @@ For detailed endpoint documentation, refer to the [API Documentation](docs/api_d
 ## Database Model
 - **prices**: Represents the price details of the products.
 
-For detailed information for the DataBase, refer to the [DB Documentatio](docs/database.md).
+For detailed information for the DataBase, refer to the [Database Documentation](docs/database.md).
 
