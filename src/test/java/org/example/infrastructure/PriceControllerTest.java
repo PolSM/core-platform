@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -21,6 +22,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 public class PriceControllerTest {
+
+    private static final int PRODUCT_ID = 35455;
+    private static final int BRAND_ID = 1;
+    public static final String CURRENCY = "EUR";
 
     @Autowired
     private WebApplicationContext webApplicationContext;
@@ -47,10 +52,10 @@ public class PriceControllerTest {
 
     static Stream<Arguments> priceProvider() {
         return Stream.of(
-                Arguments.of("2020-06-14T10:00:00", new ProductPriceDTO(35455, 1, LocalDateTime.parse("2020-06-14T00:00:00"), LocalDateTime.parse("2020-12-31T23:59:59"), 35.50f, "EUR")),
-                Arguments.of("2020-06-14T16:00:00", new ProductPriceDTO(35455, 1, LocalDateTime.parse("2020-06-14T15:00:00"), LocalDateTime.parse("2020-06-14T18:30:00"), 25.45f, "EUR")),
-                Arguments.of("2020-06-15T10:00:00", new ProductPriceDTO(35455, 1, LocalDateTime.parse("2020-06-15T00:00:00"), LocalDateTime.parse("2020-06-15T11:00:00"), 30.50f, "EUR")),
-                Arguments.of("2020-06-15T16:00:00", new ProductPriceDTO(35455, 1, LocalDateTime.parse("2020-06-15T16:00:00"), LocalDateTime.parse("2020-12-31T23:59:59"), 38.95f, "EUR"))
+                Arguments.of("2020-06-14T10:00:00", new ProductPriceDTO(PRODUCT_ID, BRAND_ID, LocalDateTime.parse("2020-06-14T00:00:00"), LocalDateTime.parse("2020-12-31T23:59:59"), 35.50f, CURRENCY)),
+                Arguments.of("2020-06-14T16:00:00", new ProductPriceDTO(PRODUCT_ID, BRAND_ID, LocalDateTime.parse("2020-06-14T15:00:00"), LocalDateTime.parse("2020-06-14T18:30:00"), 25.45f, CURRENCY)),
+                Arguments.of("2020-06-15T10:00:00", new ProductPriceDTO(PRODUCT_ID, BRAND_ID, LocalDateTime.parse("2020-06-15T00:00:00"), LocalDateTime.parse("2020-06-15T11:00:00"), 30.50f, CURRENCY)),
+                Arguments.of("2020-06-15T16:00:00", new ProductPriceDTO(PRODUCT_ID, BRAND_ID, LocalDateTime.parse("2020-06-15T16:00:00"), LocalDateTime.parse("2020-12-31T23:59:59"), 38.95f, CURRENCY))
         );
     }
 }
