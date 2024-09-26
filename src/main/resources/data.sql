@@ -1,4 +1,4 @@
-INSERT INTO core_platform.prices (brand_id, start_date, end_date, price_list, product_id, priority, price, currency)
+INSERT INTO core_platform.tbl_prices (brand_id, start_date, end_date, price_list, product_id, priority, price, currency)
 VALUES
 (1, '2020-06-14T00:00:00', '2020-12-31T23:59:59', 1, 35455, 0, 35.50, 'EUR'),
 (1, '2020-06-14T15:00:00', '2020-06-14T18:30:00', 2, 35455, 1, 25.45, 'EUR'),

@@ -26,7 +26,7 @@ public class JpaProductPriceRepositoryTest {
 
     @BeforeEach
     public void setUp() {
-        jdbcTemplate.execute("TRUNCATE TABLE core_platform.prices");
+        jdbcTemplate.execute("TRUNCATE TABLE core_platform.tbl_prices");
     }
 
     @Test

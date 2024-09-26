@@ -1,8 +1,8 @@
 CREATE SCHEMA IF NOT EXISTS core_platform;
 
-DROP TABLE IF EXISTS core_platform.prices;
+DROP TABLE IF EXISTS core_platform.tbl_prices;
 
-CREATE TABLE core_platform.prices (
+CREATE TABLE core_platform.tbl_prices (
     brand_id INTEGER NOT NULL,
     start_date TIMESTAMP NOT NULL,
     end_date TIMESTAMP NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE core_platform.prices (
     PRIMARY KEY (product_id, brand_id, start_date, end_date)
 );
 
-CREATE INDEX idx_brand_id ON core_platform.prices (brand_id);
-CREATE INDEX idx_product_id ON core_platform.prices (product_id);
-CREATE INDEX idx_start_date ON core_platform.prices (start_date);
-CREATE INDEX idx_end_date ON core_platform.prices (end_date);
+CREATE INDEX idx_brand_id ON core_platform.tbl_prices (brand_id);
+CREATE INDEX idx_product_id ON core_platform.tbl_prices (product_id);
+CREATE INDEX idx_start_date ON core_platform.tbl_prices (start_date);
+CREATE INDEX idx_end_date ON core_platform.tbl_prices (end_date);

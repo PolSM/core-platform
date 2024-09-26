@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-@Table(name = "prices", schema = "core_platform")
+@Table(name = "tbl_prices", schema = "core_platform")
 public class ProductPrice {
     @Id
     @Column(name = "product_id")

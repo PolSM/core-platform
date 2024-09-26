@@ -2,7 +2,7 @@
 
 ## Schema: `core_platform`
 
-### Table: `prices`
+### Table: `tbl_prices`
 #### Columns:
 - **brand_id**: An integer that represents a unique identifier for the brand.
 - **start_date**: A timestamp indicating the start date of the price validity.
@@ -20,7 +20,7 @@
 ```sql
 CREATE SCHEMA IF NOT EXISTS core_platform;
 
-CREATE TABLE core_platform.prices (
+CREATE TABLE core_platform.tbl_prices (
     brand_id INTEGER NOT NULL,
     start_date TIMESTAMP NOT NULL,
     end_date TIMESTAMP NOT NULL,
