@@ -1,14 +1,22 @@
 package org.example.application.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class ProductPriceDTO {
-    private Integer productId;
-    private Integer brandId;
+    @JsonProperty("product_id")
+    private int productId;
+    @JsonProperty("brand_id")
+    private int brandId;
+    @JsonProperty("start_date")
     private LocalDateTime startDate;
+    @JsonProperty("end_date")
     private LocalDateTime endDate;
-    private Float price;
+    @JsonProperty("price")
+    private float price;
+    @JsonProperty("currency")
     private String currency;
 
     public ProductPriceDTO() {

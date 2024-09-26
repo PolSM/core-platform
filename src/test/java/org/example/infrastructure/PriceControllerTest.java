@@ -1,6 +1,7 @@
 package org.example.infrastructure;
 
 import org.example.application.dto.ProductPriceDTO;
+import org.example.infrastructure.tools.JsonConverter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -45,7 +46,7 @@ public class PriceControllerTest {
                         .param("product_id", "35455")
                         .param("brand_id", "1"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(productPriceDTO.toString()));
+                .andExpect(content().string(JsonConverter.convertToJson(productPriceDTO)));
     }
 
     @ParameterizedTest
