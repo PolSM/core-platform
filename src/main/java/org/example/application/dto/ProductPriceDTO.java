@@ -1,27 +1,14 @@
 package org.example.application.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Entity
-@Table(name = "PRICES", schema = "INDITEX_CORE_PLATFORM")
 public class ProductPriceDTO {
-    @Id
-    @Column(name = "PRODUCT_ID")
     private Integer productId;
-    @Column(name = "BRAND_ID")
     private Integer brandId;
-    @Column(name = "START_DATE")
     private LocalDateTime startDate;
-    @Column(name = "END_DATE")
     private LocalDateTime endDate;
-    @Column(name = "PRICE")
     private Float price;
-    @Column(name = "CURRENCY")
     private String currency;
 
     public ProductPriceDTO() {

@@ -2,9 +2,6 @@ package org.example.infrastructure;
 
 import org.example.builders.ProductPriceBuilder;
 import org.example.domain.ProductPrice;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,7 +26,7 @@ public class JpaProductPriceRepositoryTest {
 
     @BeforeEach
     public void setUp() {
-        jdbcTemplate.execute("TRUNCATE TABLE INDITEX_CORE_PLATFORM.PRICES");
+        jdbcTemplate.execute("TRUNCATE TABLE core_platform.prices");
     }
 
     @Test

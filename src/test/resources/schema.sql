@@ -1,5 +1,7 @@
 CREATE SCHEMA IF NOT EXISTS core_platform;
 
+DROP TABLE IF EXISTS core_platform.prices;
+
 CREATE TABLE core_platform.prices (
     brand_id INTEGER NOT NULL,
     start_date TIMESTAMP NOT NULL,
@@ -9,5 +11,5 @@ CREATE TABLE core_platform.prices (
     priority INTEGER NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     currency VARCHAR(3) NOT NULL,
-    PRIMARY KEY (product_id, brand_id, start_date)
+    PRIMARY KEY (product_id, brand_id, start_date, end_date)
 );

@@ -9,5 +9,5 @@ CREATE TABLE core_platform.prices (
     priority INTEGER NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     currency VARCHAR(3) NOT NULL,
-    PRIMARY KEY (product_id, brand_id, start_date)
+    PRIMARY KEY (product_id, brand_id, start_date, end_date)
 );
