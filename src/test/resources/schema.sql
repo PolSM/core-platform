@@ -13,3 +13,8 @@ CREATE TABLE core_platform.prices (
     currency VARCHAR(3) NOT NULL,
     PRIMARY KEY (product_id, brand_id, start_date, end_date)
 );
+
+CREATE INDEX idx_brand_id ON core_platform.prices (brand_id);
+CREATE INDEX idx_product_id ON core_platform.prices (product_id);
+CREATE INDEX idx_start_date ON core_platform.prices (start_date);
+CREATE INDEX idx_end_date ON core_platform.prices (end_date);
