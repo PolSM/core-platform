@@ -2,13 +2,20 @@ package org.example.infrastructure;
 
 import org.example.builders.ProductPriceBuilder;
 import org.example.domain.ProductPrice;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.test.context.TestPropertySource;
 
 import java.time.LocalDateTime;
 
+@TestPropertySource("classpath:application-test.properties")
 @SpringBootTest
 public class JpaProductPriceRepositoryTest {
     private static final int PRODUCT_ID = 35456;
@@ -16,6 +23,14 @@ public class JpaProductPriceRepositoryTest {
 
     @Autowired
     private JpaProductPriceRepository productPriceRepository;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    @BeforeEach
+    public void setUp() {
+        jdbcTemplate.execute("TRUNCATE TABLE INDITEX_CORE_PLATFORM.PRICES");
+    }
 
     @Test
     public void should_retrieve_a_product() {
@@ -40,6 +55,7 @@ public class JpaProductPriceRepositoryTest {
     public void should_not_retrieve_a_price_if_date_before_start_date() {
         productPriceRepository.save(
                 ProductPriceBuilder.aProductPrice()
+
                         .withStartDate(LocalDateTime.of(2021, 1, 1, 0, 0))
                         .withEndDate(LocalDateTime.of(2021, 12, 31, 23, 59))
                         .build()

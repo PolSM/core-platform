@@ -3,11 +3,11 @@ package org.example.infrastructure;
 import org.example.domain.ProductPrice;
 import org.example.domain.ProductPriceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 
-@Service
+@Repository
 public class JpaProductPriceRepository implements ProductPriceRepository {
 
     @Autowired

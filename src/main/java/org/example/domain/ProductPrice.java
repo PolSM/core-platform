@@ -10,24 +10,24 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-@Table(name = "PRICES", schema = "INDITEX_CORE_PLATFORM")
+@Table(name = "prices", schema = "core_platform")
 public class ProductPrice {
     @Id
-    @Column(name = "PRODUCT_ID")
+    @Column(name = "product_id")
     private Integer productId;
-    @Column(name = "BRAND_ID")
+    @Column(name = "brand_id")
     private Integer brandId;
-    @Column(name = "START_DATE")
+    @Column(name = "start_date")
     private LocalDateTime startDate;
-    @Column(name = "END_DATE")
+    @Column(name = "end_date")
     private LocalDateTime endDate;
-    @Column(name = "PRICE_LIST")
+    @Column(name = "price_list")
     private Integer priceList;
-    @Column(name = "PRIORITY")
+    @Column(name = "priority")
     private Integer priority;
-    @Column(name = "PRICE")
+    @Column(name = "price")
     private Float price;
-    @Column(name = "CURRENCY")
+    @Column(name = "currency")
     private String currency;
 
     public ProductPrice() {
